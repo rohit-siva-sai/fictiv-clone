@@ -125,14 +125,14 @@ const Footer = () => {
       <div className="flex md:flex-row flex-col pt-12 justify-center" >
         <div className="flex flex-col" >
             <div className="flex" >
-                <input type="email" name="" id="" placeholder="Business Email*" className="px-2 border border-teal-500 w-64 rounded-l-md focus:ring-4 focus:ring-teal-100 py-1" />
+                <input type="email" name="" id="" placeholder="Business Email*" className="px-2 border border-teal-500 w-52 md:w-64 rounded-l-md focus:ring-4 focus:ring-teal-100 py-1" />
                 <div className="py-1 px-5 cursor-pointer text-white bg-teal-500 font-bold " >
                     SUBSCRIBE
                 </div>
             </div>
             <p className="text-[10px] md:w-96 text-gray-400 px-4 py-3 " >By signing up, you agree to our <span className="text-teal-500 cursor-pointer" >Terms of Use</span> and <span className="text-teal-500 cursor-pointer" >Privacy Policy</span>. We may use the info you submit to contact you and use data from third parties to personalize your experience.</p>
         </div>
-        <div className="py-4 flex  space-x-3" >
+        <div className=" md:py-0 py-4 flex  space-x-3" >
             <div className="bg-gray-100 px-6 h-fit py-2 cursor-pointer " >
                 <picture  >
                     <img src="https://www.fictiv.com/wp-content/themes/fictiv-theme/assets/images/icons/facebook.svg" alt="" width={12} />

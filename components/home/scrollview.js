@@ -21,7 +21,7 @@ const Scrollview = () => {
                 {/* <p className='text-4xl font-bold text-gray-700' >High-Quality Parts</p> */}
             </div>
             <div>
-                <Splide className='splide' >
+                {/* <Splide className='splide' >
                    <SplideSlide>
                    
                    </SplideSlide>
@@ -29,7 +29,7 @@ const Scrollview = () => {
                    <SplideSlide>lorem</SplideSlide>
                    <SplideSlide>lorem</SplideSlide>
                    <SplideSlide>lorem</SplideSlide>
-                </Splide>
+                </Splide> */}
             </div>
         </div>
     </div>
