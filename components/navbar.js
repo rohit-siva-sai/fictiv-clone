@@ -17,10 +17,7 @@ const client = createClient({
 });
 
 const Navbar = ({ features }) => {
-
-  const router  = useRouter()
-
-  
+  const router = useRouter();
 
   // const [features,setFeatures] = useState([])
 
@@ -39,8 +36,6 @@ const Navbar = ({ features }) => {
   //     });
   // }, []);
 
-
-
   const [show, setShow] = useState(false);
   const [dropDown, setDropDown] = useState(false);
   return (
@@ -48,12 +43,12 @@ const Navbar = ({ features }) => {
       <div className="flex items-center py-4 md:py-3 space-x-3 shadow-md md:justify-evenly justify-between px-4 md:px-0">
         <div className="flex md:space-x-8">
           <Link href={"/"}>
-          <picture>
-            <img
-              src="https://www.fictiv.com/wp-content/themes/fictiv-theme/assets/images/logos/fictiv-teal.svg"
-              alt=""
-            />
-          </picture>
+            <picture>
+              <img
+                src="https://www.fictiv.com/wp-content/themes/fictiv-theme/assets/images/logos/fictiv-teal.svg"
+                alt=""
+              />
+            </picture>
           </Link>
           <div className="md:flex hidden space-x-3 items-center ">
             <div
@@ -123,36 +118,38 @@ const Navbar = ({ features }) => {
       </div>
 
       {show && (
-        <div  onClick={() => {
-          setDropDown(!dropDown);
-        }}
-       className="absolute top-14 py-4 border bg-white w-screen">
+        <div
+          onClick={() => {
+            setDropDown(!dropDown);
+          }}
+          className="absolute top-14 py-4 border bg-white w-screen"
+        >
           <div className="md:hidden divide-y-2 grid grid-cols-1 px-6   gap-y-6  md:space-x-3  ">
             <div className="flex  hover:text-teal-500   items-center cursor-pointer ">
               <p className="font-semibold">Capabilities</p>
               <RiArrowDropDownLine className="text-gray-600 font-bold text-3xl " />
             </div>
             {dropDown && (
-        <div
-          onMouseOver={() => {
-            setDropDown(true);
-          }}
-          onMouseLeave={() => {
-            setDropDown(false);
-          }}
-          className="flex flex-col py-6 md:hidden  w-full"
-        >
-          <div className="flex flex-col  space-y-4  w-full bg-white border-b md:py-12 md:px-36">
-            {features.map((item) => {
-              return (
-                <Link href={`/features/${item.slug.current}`}>
-                  <Features title={item.title} imgUrl={item.imgUrl} />
-                </Link>
-              );
-            })}
-          </div>
-        </div>
-      )}
+              <div
+                onMouseOver={() => {
+                  setDropDown(true);
+                }}
+                onMouseLeave={() => {
+                  setDropDown(false);
+                }}
+                className="flex flex-col py-6 md:hidden  w-full"
+              >
+                <div className="flex flex-col  space-y-4  w-full bg-white border-b md:py-12 md:px-36">
+                  {features.map((item) => {
+                    return (
+                      <Link href={`/features/${item.slug.current}`}>
+                        <Features title={item.title} imgUrl={item.imgUrl} />
+                      </Link>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
             <div className="flex   hover:text-teal-500  items-center cursor-pointer ">
               <p className="font-semibold">Solutions</p>
               <RiArrowDropDownLine className="text-gray-600 font-bold text-3xl " />
@@ -191,10 +188,10 @@ const Navbar = ({ features }) => {
           }}
           className="absolute hidden md:block md:top-12  w-full"
         >
-          <div className="flex flex-col  space-y-4  w-full bg-white border-b py-12 px-36">
+          <div className="flex space-x-4  w-full bg-white border-b py-12 px-36">
             {features.map((item) => {
               return (
-                <Link href={`/features/${item.slug.current}`}>
+                <Link href={`/${item.slug.current}`}>
                   <Features title={item.title} imgUrl={item.imgUrl} />
                 </Link>
               );

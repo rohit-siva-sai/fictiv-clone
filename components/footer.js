@@ -48,17 +48,17 @@ const Footer = () => {
                 CNC Machining
               </li>
             </Link>
-            <Link href={"/features/injection-molding-service"}>
+            <Link href={"/injection-molding-service"}>
               <li className="cursor-pointer hover:text-teal-500">
                 Injection Molding
               </li>
             </Link>
-            <Link href={"/features/3d-printing-service"}>
+            <Link href={"/3d-printing-service"}>
               <li className="cursor-pointer hover:text-teal-500">
                 3D Printing
               </li>
             </Link>
-            <Link href={"/features/urethane-casting-service"}>
+            <Link href={"/urethane-casting-service"}>
               <li className="cursor-pointer hover:text-teal-500">
                 Urethane Casting
               </li>

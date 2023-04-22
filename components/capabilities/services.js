@@ -7,7 +7,7 @@ const Services = ({ services }) => {
         {services[0].info == "cnc" ? 
           <p className="text-3xl text-gray-700 text-center py-6 font-semibold">
             CNC Machining Services
-          </p> :  services.info[0] == "3d" ? <p className="text-3xl text-gray-700 text-center py-6 font-semibold">
+          </p> :  services[0].info == "3d" ? <p className="text-3xl text-gray-700 text-center py-6 font-semibold">
             3D Modeling Services 
           </p> : <p className="text-3xl text-gray-700 text-center py-6 font-semibold">
             Injection Moulding Processes 
