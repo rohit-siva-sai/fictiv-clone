@@ -23,7 +23,7 @@ export default function Home({ features }) {
 
   
   return (
-    <main className="bg-white  overflow-hidden ">
+    <main className="bg-white mt-16  overflow-hidden ">
       <Navbar features={features} />
       <Homepage />
       <Capability />
@@ -59,7 +59,7 @@ export async function getServerSideProps(context) {
   const features = await client.fetch(query);
   // const profileQuery = `*[_type == "profile"][0]`;
   // const profile = await client.fetch(profileQuery);
-  console.log(features);
+ 
 
   return {
     props: {

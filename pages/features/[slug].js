@@ -27,27 +27,26 @@ const Post = ({ blog, features }) => {
 
   // useEffect(()=>{
   //   setHeading(blog.heading)
-  //   console.log(heading);
+  
 
   //   setBlogs(blog.blogs)
   // })
 
-  console.log(heading, "rohit siva sai");
+ 
 
   const builder = imageUrlBuilder(client);
-  // console.log(blog.heading);
 
-  console.log("aoooooo", features);
+
+  
 
   const urlFor = (source) => builder.image(source);
 
-  const arr = blog.heading.subTitle;
-  console.log(blog.heading.bgImage);
+  
 
   // const imageProps = useNextSanityImage(client, blog.heading.bgImage);
 
   return (
-    <div className="overflow-hidden" >
+    <div className="overflow-hidden mt-16 " >
       <Navbar features={features} />
       <div
         style={{
@@ -87,13 +86,12 @@ export default Post;
 
 export const getServerSideProps = async (context) => {
   const { slug } = context.query;
-  console.log(slug);
-  console.log();
+ 
 
   // const query = `*[_type == "blog"  && Slug.current == '${slug}']`;
   // const query = `*[_type == "blog"  && slug.current == '${slug}']`;
   // const blog = await client.fetch(query);
-  // console.log(blog);
+  
   // return {
   //   props: {
   //     blog,
@@ -110,7 +108,7 @@ export const getServerSideProps = async (context) => {
   // const profileQuery = `*[_type == "profile"][0]`;
   // const profile = await client.fetch(profileQuery);
 
-  // console.log("rohit siva sai", blog);
+
   return {
     props: {
       blog,

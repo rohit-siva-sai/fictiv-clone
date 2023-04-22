@@ -2,7 +2,7 @@ import React from 'react'
 
 const Blogs = ({blogs}) => {
 
-    // console.log(blogs,"hgdcvehgvfehvhg");
+    
     
   return (
     <div className='md:px-44 px-4 md:py-24 py-20 bg-gray-100 ' >

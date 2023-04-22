@@ -21,7 +21,7 @@ const Navbar = ({ features }) => {
   const router  = useRouter()
 
   
-  // console.log(features);
+
   // const [features,setFeatures] = useState([])
 
   // useEffect(() => {
@@ -39,12 +39,12 @@ const Navbar = ({ features }) => {
   //     });
   // }, []);
 
-  console.log("rohit siva sai lorem epsum", features);
+
 
   const [show, setShow] = useState(false);
   const [dropDown, setDropDown] = useState(false);
   return (
-    <div className="sticky top-0 left-0 z-50 bg-white">
+    <div className="fixed w-full top-0  z-50 bg-white">
       <div className="flex items-center py-4 md:py-3 space-x-3 shadow-md md:justify-evenly justify-between px-4 md:px-0">
         <div className="flex md:space-x-8">
           <Link href={"/"}>
@@ -216,7 +216,6 @@ export default Navbar;
 //   });
 
 //   // const { slug } = context.query;
-//   // console.log(slug);
 
 //   // const query = `*[_type == "features" ][0] {...,heading->} {...,blogs[]->}`;
 //   const query = `*[_type == "features"]`

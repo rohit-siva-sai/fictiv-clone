@@ -4,7 +4,7 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 
 const Features = ({ title, imgUrl }) => {
 
-    console.log(title,imgUrl);
+    
     
   return (
     <div  className="flex justify-between w-72 border  cursor-pointer  items-center">

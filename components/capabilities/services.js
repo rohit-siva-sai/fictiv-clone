@@ -4,10 +4,12 @@ const Services = ({ services }) => {
   return (
     <div>
       {services && <div className="md:px-40 px-4 py-20  ">
-        {services[0].info != "injection" ? 
+        {services[0].info == "cnc" ? 
           <p className="text-3xl text-gray-700 text-center py-6 font-semibold">
-            {services[0].info} Services
-          </p> :  <p className="text-3xl text-gray-700 text-center py-6 font-semibold">
+            CNC Machining Services
+          </p> :  services.info[0] == "3d" ? <p className="text-3xl text-gray-700 text-center py-6 font-semibold">
+            3D Modeling Services 
+          </p> : <p className="text-3xl text-gray-700 text-center py-6 font-semibold">
             Injection Moulding Processes 
           </p>
         }
