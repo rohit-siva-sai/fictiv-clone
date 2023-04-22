@@ -14,12 +14,17 @@ import Scrollview from "@/components/home/scrollview";
 import Robotics from "@/components/home/robotics";
 import Digital from "@/components/home/digital";
 import Getstarted from "@/components/home/getstarted";
+import { useEffect, useState } from "react";
+import Navbar from "@/components/navbar";
 
 // const inter = Inter({ subsets: ["latin"] });
 
 export default function Home({ features }) {
+
+  
   return (
     <main className="bg-white  overflow-hidden ">
+      <Navbar features={features} />
       <Homepage />
       <Capability />
       <Global />
