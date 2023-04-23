@@ -21,33 +21,18 @@ const Post = ({ blog, features }) => {
   const heading = blog.heading;
   const blogs = blog.blogs;
   const services = blog.services;
-  const caseStudy = blog.caseStudy
-  const promise = blog.promise
-  const resources = blog.resources
-
-  // useEffect(()=>{
-  //   setHeading(blog.heading)
-  
-
-  //   setBlogs(blog.blogs)
-  // })
-
- 
+  const caseStudy = blog.caseStudy;
+  const promise = blog.promise;
+  const resources = blog.resources;
 
   const builder = imageUrlBuilder(client);
 
-
-  
-
   const urlFor = (source) => builder.image(source);
-
-  
 
   // const imageProps = useNextSanityImage(client, blog.heading.bgImage);
 
   return (
-    <div className="overflow-hidden mt-16 " >
-      <Navbar features={features} />
+    <div className="overflow-hidden mt-16 ">
       <div
         style={{
           backgroundImage: `url(${urlFor(heading.bgImage).url()})`,
@@ -64,20 +49,8 @@ const Post = ({ blog, features }) => {
       <Services services={services} />
       <CaseStudy caseStudy={caseStudy} />
       <Promise promise={promise} />
-      <Resources resources={resources}  /> 
-      {/* <Image {...imageProps} sizes="(max-width: 800px) 100vw, 800px"  /> */}
-      {/* djshvdshgv shavshgas ashgxavshs sahgasvgh */}
-      {/* {blog.blogs.map((item) => {
-        return (
-          <div>
-            <h1>{item.title}</h1>
-            <p>{item.matter}</p>
-            <picture>
-              <img src={item.imgUrl} alt="sdvshgv" />
-            </picture>
-          </div>
-        );
-      })} */}
+      <Resources resources={resources} />
+    
     </div>
   );
 };
@@ -86,17 +59,8 @@ export default Post;
 
 export const getServerSideProps = async (context) => {
   const { slug } = context.query;
- 
 
-  // const query = `*[_type == "blog"  && Slug.current == '${slug}']`;
-  // const query = `*[_type == "blog"  && slug.current == '${slug}']`;
-  // const blog = await client.fetch(query);
   
-  // return {
-  //   props: {
-  //     blog,
-  //   },
-  // };
   const query2 = `*[_type == "features"]`;
   const features = await client.fetch(query2);
 
@@ -107,7 +71,6 @@ export const getServerSideProps = async (context) => {
 
   // const profileQuery = `*[_type == "profile"][0]`;
   // const profile = await client.fetch(profileQuery);
-
 
   return {
     props: {

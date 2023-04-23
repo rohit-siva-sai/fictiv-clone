@@ -19,12 +19,16 @@ import Navbar from "@/components/navbar";
 
 // const inter = Inter({ subsets: ["latin"] });
 
-export default function Home({ features }) {
-
+export default function Home({ getFeatures,features }) {
+   
+ useEffect(()=>{
+  getFeatures(features);
+ })
+  
   
   return (
     <main className="bg-white mt-16  overflow-hidden ">
-      <Navbar features={features} />
+     
       <Homepage />
       <Capability />
       <Global />

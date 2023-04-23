@@ -39,6 +39,7 @@ const Navbar = ({ features }) => {
   const [show, setShow] = useState(false);
   const [dropDown, setDropDown] = useState(false);
   return (
+   <div>
     <div className="fixed w-full top-0  z-50 bg-white">
       <div className="flex items-center py-4 md:py-3 space-x-3 shadow-md md:justify-evenly justify-between px-4 md:px-0">
         <div className="flex md:space-x-8">
@@ -111,7 +112,7 @@ const Navbar = ({ features }) => {
               <GiCrossedSabres className="text-2xl text-teal-500 " />
             </div>
           )}
-          <div className="py-3 md:block hidden rounded-sm cursor-pointer px-12 bg-teal-500 hover:bg-teal-700 text-white font-semibold">
+          <div className="py-3 z-20 md:block hidden rounded-sm cursor-pointer px-12 bg-teal-500 hover:bg-teal-700 text-white font-semibold">
             Get Instant Quote
           </div>
         </div>
@@ -119,13 +120,13 @@ const Navbar = ({ features }) => {
 
       {show && (
         <div
-          onClick={() => {
-            setDropDown(!dropDown);
-          }}
+         
           className="absolute top-14 py-4 border bg-white w-screen"
         >
           <div className="md:hidden divide-y-2 grid grid-cols-1 px-6   gap-y-6  md:space-x-3  ">
-            <div className="flex  hover:text-teal-500   items-center cursor-pointer ">
+            <div  onClick={() => {
+            setDropDown(!dropDown);
+          }} className="flex   hover:text-teal-500   items-center cursor-pointer ">
               <p className="font-semibold">Capabilities</p>
               <RiArrowDropDownLine className="text-gray-600 font-bold text-3xl " />
             </div>
@@ -171,7 +172,7 @@ const Navbar = ({ features }) => {
             <div className="font-semibold cursor-pointer hover:text-teal-500">
               Log In
             </div>
-            <div className="py-3 md:hidden block rounded-sm cursor-pointer px-24 w-fit bg-teal-500 hover:bg-teal-700 text-white font-semibold">
+            <div className="py-3  md:hidden block rounded-sm cursor-pointer px-24 w-fit bg-teal-500 hover:bg-teal-700 text-white font-semibold">
               Get A Quote
             </div>
           </div>
@@ -186,7 +187,7 @@ const Navbar = ({ features }) => {
           onMouseLeave={() => {
             setDropDown(false);
           }}
-          className="absolute hidden md:block md:top-12  w-full"
+          className="absolute hidden md:block md:top-12 z-10  w-full"
         >
           <div className="flex space-x-4  w-full bg-white border-b py-12 px-36">
             {features.map((item) => {
@@ -200,28 +201,27 @@ const Navbar = ({ features }) => {
         </div>
       )}
     </div>
+   </div>
   );
 };
 
 export default Navbar;
 
-// export const getServerSideProps = async (context) => {
-//   const client = createClient({
-//     projectId: "m5g9pmc5",
-//     dataset: "production",
-//     useCdn: false,
-//   });
+export const getServerSideProps = async (context) => {
+  const client = createClient({
+    projectId: "m5g9pmc5",
+    dataset: "production",
+    useCdn: false,
+  });
 
-//   // const { slug } = context.query;
 
-//   // const query = `*[_type == "features" ][0] {...,heading->} {...,blogs[]->}`;
-//   const query = `*[_type == "features"]`
-//   // const query = `*[_type == "features"]    `;
-//   const features = await client.fetch(query)
+  const query = `*[_type == "features"]`
 
-//   return {
-//     props: {
-//       features
-//     },
-//   };
-// };
+  const features = await client.fetch(query)
+
+  return {
+    props: {
+      features
+    },
+  };
+};
